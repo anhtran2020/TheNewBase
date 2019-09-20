@@ -11,11 +11,17 @@
 		663A66F223337FC700C97EB1 /* BitcoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663A66F123337FC700C97EB1 /* BitcoinViewController.swift */; };
 		663A66F42333846700C97EB1 /* BitcoinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663A66F32333846700C97EB1 /* BitcoinRouter.swift */; };
 		663A66F623338AA800C97EB1 /* BitcoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663A66F523338AA800C97EB1 /* BitcoinViewModel.swift */; };
-		663A66F82333908200C97EB1 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663A66F72333908200C97EB1 /* AppContainer.swift */; };
 		663A66FD2333926300C97EB1 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663A66FC2333926300C97EB1 /* UIViewController+.swift */; };
 		666AF07A23348E91004E8F99 /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF07923348E91004E8F99 /* Bitcoin.swift */; };
 		666AF07C2334BD41004E8F99 /* ViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF07B2334BD41004E8F99 /* ViewModeling.swift */; };
 		666AF07E2334C123004E8F99 /* ViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF07D2334C123004E8F99 /* ViewControlling.swift */; };
+		666AF0832334E599004E8F99 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF0822334E599004E8F99 /* NetworkAssembly.swift */; };
+		666AF0852334E5A9004E8F99 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF0842334E5A9004E8F99 /* ViewModelAssembly.swift */; };
+		666AF0872334E607004E8F99 /* BitcoinAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF0862334E607004E8F99 /* BitcoinAssembly.swift */; };
+		666AF0892334E624004E8F99 /* Assembler+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF0882334E624004E8F99 /* Assembler+.swift */; };
+		666AF08B2334E7C9004E8F99 /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF08A2334E7C9004E8F99 /* UIStoryboard+.swift */; };
+		666AF08D2334E80C004E8F99 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF08C2334E80C004E8F99 /* UIDevice+.swift */; };
+		666AF08F2334E82B004E8F99 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF08E2334E82B004E8F99 /* UITableView+.swift */; };
 		66E7A66F232F3BBD00F4E22C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7A66E232F3BBD00F4E22C /* AppDelegate.swift */; };
 		66E7A671232F3BBD00F4E22C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7A670232F3BBD00F4E22C /* ViewController.swift */; };
 		66E7A674232F3BBD00F4E22C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E7A672232F3BBD00F4E22C /* Main.storyboard */; };
@@ -52,11 +58,17 @@
 		663A66F123337FC700C97EB1 /* BitcoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinViewController.swift; sourceTree = "<group>"; };
 		663A66F32333846700C97EB1 /* BitcoinRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinRouter.swift; sourceTree = "<group>"; };
 		663A66F523338AA800C97EB1 /* BitcoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinViewModel.swift; sourceTree = "<group>"; };
-		663A66F72333908200C97EB1 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		663A66FC2333926300C97EB1 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		666AF07923348E91004E8F99 /* Bitcoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitcoin.swift; sourceTree = "<group>"; };
 		666AF07B2334BD41004E8F99 /* ViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModeling.swift; sourceTree = "<group>"; };
 		666AF07D2334C123004E8F99 /* ViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlling.swift; sourceTree = "<group>"; };
+		666AF0822334E599004E8F99 /* NetworkAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
+		666AF0842334E5A9004E8F99 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
+		666AF0862334E607004E8F99 /* BitcoinAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinAssembly.swift; sourceTree = "<group>"; };
+		666AF0882334E624004E8F99 /* Assembler+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembler+.swift"; sourceTree = "<group>"; };
+		666AF08A2334E7C9004E8F99 /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
+		666AF08C2334E80C004E8F99 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
+		666AF08E2334E82B004E8F99 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		66E7A66B232F3BBD00F4E22C /* TheNewBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheNewBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E7A66E232F3BBD00F4E22C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66E7A670232F3BBD00F4E22C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				663A66FC2333926300C97EB1 /* UIViewController+.swift */,
+				666AF08A2334E7C9004E8F99 /* UIStoryboard+.swift */,
+				666AF08C2334E80C004E8F99 /* UIDevice+.swift */,
+				666AF08E2334E82B004E8F99 /* UITableView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -155,6 +170,17 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		666AF0812334E56F004E8F99 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				666AF0822334E599004E8F99 /* NetworkAssembly.swift */,
+				666AF0842334E5A9004E8F99 /* ViewModelAssembly.swift */,
+				666AF0862334E607004E8F99 /* BitcoinAssembly.swift */,
+				666AF0882334E624004E8F99 /* Assembler+.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		66E7A662232F3BBC00F4E22C = {
 			isa = PBXGroup;
 			children = (
@@ -180,18 +206,18 @@
 		66E7A66D232F3BBD00F4E22C /* TheNewBase */ = {
 			isa = PBXGroup;
 			children = (
-				663A66FA2333924900C97EB1 /* Helper */,
 				66E7A69C232F3DC000F4E22C /* Services */,
+				663A66FA2333924900C97EB1 /* Helper */,
 				663C009F23307B470048CE24 /* Models */,
 				663C00A023307B4E0048CE24 /* ViewModels */,
 				663C00A123307B560048CE24 /* ViewControllers */,
+				666AF0812334E56F004E8F99 /* DI */,
 				66E7A66E232F3BBD00F4E22C /* AppDelegate.swift */,
 				66E7A670232F3BBD00F4E22C /* ViewController.swift */,
 				66E7A672232F3BBD00F4E22C /* Main.storyboard */,
 				66E7A675232F3BC000F4E22C /* Assets.xcassets */,
 				66E7A677232F3BC000F4E22C /* LaunchScreen.storyboard */,
 				66E7A67A232F3BC000F4E22C /* Info.plist */,
-				663A66F72333908200C97EB1 /* AppContainer.swift */,
 			);
 			path = TheNewBase;
 			sourceTree = "<group>";
@@ -430,17 +456,23 @@
 				66E7A6A3232F795400F4E22C /* Requestable.swift in Sources */,
 				666AF07C2334BD41004E8F99 /* ViewModeling.swift in Sources */,
 				66E7A671232F3BBD00F4E22C /* ViewController.swift in Sources */,
+				666AF08F2334E82B004E8F99 /* UITableView+.swift in Sources */,
 				66E7A6AA232F9E4300F4E22C /* Network.swift in Sources */,
+				666AF0852334E5A9004E8F99 /* ViewModelAssembly.swift in Sources */,
 				66E7A6A1232F3FCA00F4E22C /* APIResponse.swift in Sources */,
 				66E7A69F232F3DE400F4E22C /* APIConfigs.swift in Sources */,
-				663A66F82333908200C97EB1 /* AppContainer.swift in Sources */,
 				663A66F623338AA800C97EB1 /* BitcoinViewModel.swift in Sources */,
+				666AF0892334E624004E8F99 /* Assembler+.swift in Sources */,
+				666AF08B2334E7C9004E8F99 /* UIStoryboard+.swift in Sources */,
 				66E7A66F232F3BBD00F4E22C /* AppDelegate.swift in Sources */,
+				666AF08D2334E80C004E8F99 /* UIDevice+.swift in Sources */,
 				666AF07A23348E91004E8F99 /* Bitcoin.swift in Sources */,
+				666AF0832334E599004E8F99 /* NetworkAssembly.swift in Sources */,
 				666AF07E2334C123004E8F99 /* ViewControlling.swift in Sources */,
 				663A66F42333846700C97EB1 /* BitcoinRouter.swift in Sources */,
 				663A66FD2333926300C97EB1 /* UIViewController+.swift in Sources */,
 				66E7A6A8232F9B0B00F4E22C /* Networking.swift in Sources */,
+				666AF0872334E607004E8F99 /* BitcoinAssembly.swift in Sources */,
 				663A66F223337FC700C97EB1 /* BitcoinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
