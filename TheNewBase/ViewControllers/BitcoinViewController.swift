@@ -23,8 +23,8 @@ class BitcoinViewController: UIViewController, ViewControlling {
     }
     
     private func addObservers() {
-        viewModel?.info.asObservable().subscribe(onNext: { [weak self] bitcoin in
-            self?.infoLabel.text = bitcoin?.data.amount
+        viewModel?.bitcoin.asObservable().subscribe(onNext: { [weak self] bitcoin in
+            self?.infoLabel.text = bitcoin?.amount
         }).disposed(by: disposeBag)
     }
 

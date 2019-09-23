@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Bitcoin: Codable {
-    var data: Info
+struct BitcoinResponse: Codable {
+    var data: Bitcoin
 }
 
-struct Info: Codable {
+struct Bitcoin: Codable {
     var base: String
     var currency: String
     var amount: String

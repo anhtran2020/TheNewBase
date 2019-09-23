@@ -10,14 +10,14 @@ import RxSwift
 
 protocol BitcoinViewModeling: NetworkViewModeling {
     
-    var info: PublishSubject<Bitcoin?> { get set }
+    var bitcoin: PublishSubject<Bitcoin?> { get set }
     mutating func fetchBitcoinPrice()
 }
 
 struct BitcoinViewModel: ViewModeling, BitcoinViewModeling {
 
     var networking: Networking?
-    var info = PublishSubject<Bitcoin?>()
+    var bitcoin = PublishSubject<Bitcoin?>()
     var bag = DisposeBag()
     
     init(networking: Networking?) {
@@ -26,7 +26,7 @@ struct BitcoinViewModel: ViewModeling, BitcoinViewModeling {
     
     func fetchBitcoinPrice() {
         let router = BitcoinRouter(params: [:])
-        networking?.request(type: Bitcoin.self, urlRequest: router).subscribe(onNext: { response in
+        networking?.request(type: BitcoinResponse.self, urlRequest: router).subscribe(onNext: { response in
             self.handleResponse(response)
         }).disposed(by: bag)
     }
@@ -41,9 +41,9 @@ struct BitcoinViewModel: ViewModeling, BitcoinViewModeling {
     }
     
     private func parseSuccessResponse(result: Any?) {
-        if let bitcoin = result as? Bitcoin {
-            print("price: \(bitcoin.data.amount)")
-            info.onNext(bitcoin)
+        if let response = result as? BitcoinResponse {
+            print("price: \(response.data.amount)")
+            bitcoin.onNext(response.data)
         }
     }
     
