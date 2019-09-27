@@ -17,4 +17,8 @@ extension Assembler {
                                   container: container)
         return assembler
     }()
+    
+    static func resolve<T>(_ serviceType: T.Type) -> T? {
+        return Assembler.shared.resolver.resolve(serviceType)
+    }
 }

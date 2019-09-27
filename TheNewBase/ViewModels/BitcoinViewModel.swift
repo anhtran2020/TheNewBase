@@ -18,7 +18,7 @@ struct BitcoinViewModel: ViewModeling, BitcoinViewModeling {
 
     var networking: Networking?
     var bitcoin = PublishSubject<Bitcoin?>()
-    var bag = DisposeBag()
+    var disposeBag = DisposeBag()
     
     init(networking: Networking?) {
         self.networking = networking
@@ -28,7 +28,7 @@ struct BitcoinViewModel: ViewModeling, BitcoinViewModeling {
         let router = BitcoinRouter(params: [:])
         networking?.request(type: BitcoinResponse.self, urlRequest: router).subscribe(onNext: { response in
             self.handleResponse(response)
-        }).disposed(by: bag)
+        }).disposed(by: disposeBag)
     }
     
     private func handleResponse(_ response: APIResponse) {

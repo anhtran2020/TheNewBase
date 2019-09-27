@@ -9,15 +9,9 @@
 import RxSwift
 
 protocol ViewModeling {
-    var disposeBag: DisposeBag { get }
+    
 }
 
 protocol NetworkViewModeling {
     var networking: Networking? { get }
-}
-
-extension ViewModeling {
-    var disposeBag: DisposeBag {
-        return DisposeBag()
-    }
 }

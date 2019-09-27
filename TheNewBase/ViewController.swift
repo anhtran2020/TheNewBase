@@ -18,9 +18,8 @@ class ViewController: UIViewController {
 
 
     @IBAction func priceButtonTapped(_ sender: Any) {
-        if let bitcoinVC = Assembler.shared.resolver.resolve(BitcoinViewController.self) {
-            self.navigationController?.pushViewController(bitcoinVC, animated: true)
-        }
+        let coordinator = BitcoinCoordinator(presenter: self.navigationController)
+        coordinator.start()
     }
 }
 
