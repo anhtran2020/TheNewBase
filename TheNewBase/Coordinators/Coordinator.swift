@@ -7,5 +7,5 @@
 //
 
 protocol Coordinator {
-    func start()
+    mutating func start()
 }

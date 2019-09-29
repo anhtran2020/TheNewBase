@@ -13,10 +13,10 @@ struct BitcoinAssembly: Assembly {
     
     func assemble(container: Container) {
         
-        container.register(UINavigationController.self) { resolver in
+        container.register(FirstViewController.self) { resolver in
             let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
-            let navVC = storyboard.instantiateViewController(ofType: UINavigationController.self)
-            return navVC
+            let firstVC = storyboard.instantiateViewController(ofType: FirstViewController.self)
+            return firstVC
         }
         
         container.register(BitcoinViewController.self) { resolver in

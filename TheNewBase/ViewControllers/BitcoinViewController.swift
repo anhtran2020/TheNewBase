@@ -9,9 +9,8 @@
 import UIKit
 import RxSwift
 
-class BitcoinViewController: UIViewController, ViewControlling {
+class BitcoinViewController: BaseViewController {
     
-    var disposeBag = DisposeBag()
     var viewModel: BitcoinViewModeling?
 
     @IBOutlet weak var infoLabel: UILabel!

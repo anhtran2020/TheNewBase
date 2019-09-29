@@ -18,7 +18,7 @@ struct AppCoordinator: Coordinator {
     }
     
     func start() {
-        window.rootViewController = Assembler.resolve(UINavigationController.self)
-        window.makeKeyAndVisible()
+        var firstCoordinator = FirstCoordinator(window: window)
+        firstCoordinator.start()
     }
 }
