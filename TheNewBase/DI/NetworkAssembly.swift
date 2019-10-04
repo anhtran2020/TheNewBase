@@ -12,7 +12,7 @@ struct NetworkAssembly: Assembly {
     
     func assemble(container: Container) {
         container.register(Networking.self) { resolver in
-            return Network(token: "")
+            return Network()
         }
     }
 }

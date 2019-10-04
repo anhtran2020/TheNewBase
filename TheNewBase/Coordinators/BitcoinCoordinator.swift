@@ -21,8 +21,8 @@ struct BitcoinCoordinator: Coordinator {
         guard let bitcoinVC = Assembler.resolve(BitcoinViewController.self) else {
             return
         }
-        
-        bitcoinVC.viewModel = Assembler.resolve(BitcoinViewModeling.self)
+        bitcoinVC.viewModel = Assembler.resolve(BitcoinViewModeling.self, argument: "aaaaaa")
+            //Assembler.resolve(BitcoinViewModeling.self)
         navigationController?.pushViewController(bitcoinVC, animated: true)
     }
 }

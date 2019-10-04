@@ -8,10 +8,6 @@
 
 struct Address {
     
-    static let baseUrl = "https://api.coinbase.com"
-    static let domain = ""
-    
-    struct Bitcoin {
-        static let price = "/v2/prices/BTC-USD/spot"
-    }
+    static let baseUrl = "https://pixabay.com/api/"
+    static let domain = "pixabay.com"
 }

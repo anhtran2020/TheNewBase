@@ -21,4 +21,8 @@ extension Assembler {
     static func resolve<T>(_ serviceType: T.Type) -> T? {
         return Assembler.shared.resolver.resolve(serviceType)
     }
+    
+    static func resolve<T, Arg1>(_ serviceType: T.Type, argument: Arg1) -> T? {
+        return Assembler.shared.resolver.resolve(serviceType, argument: argument)
+    }
 }

@@ -13,5 +13,5 @@ protocol Networking {
     
     func request<T: Decodable>(type: T.Type, urlRequest: Requestable) -> Observable<APIResponse>
     
-    init(token: String)
+    init()
 }

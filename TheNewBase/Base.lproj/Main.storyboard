@@ -8,54 +8,99 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--Pixa Images View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="FirstViewController" id="BYZ-38-t0r" customClass="FirstViewController" customModule="TheNewBase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PixaImagesViewController" id="BYZ-38-t0r" customClass="PixaImagesViewController" customModule="TheNewBase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUa-eM-ATj">
-                                <rect key="frame" x="130" y="206" width="114" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Get Bitcoin price"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ixy-Xf-NIL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PixaImagaCell" rowHeight="100" id="OlZ-vv-KXl" customClass="PixaImagaCell" customModule="TheNewBase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OlZ-vv-KXl" id="C9O-Bi-W7l">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lUK-j3-pui">
+                                                    <rect key="frame" x="15" y="15" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="lUK-j3-pui" secondAttribute="height" multiplier="1:1" id="cem-0b-2Ls"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OWh-Op-zIX">
+                                                    <rect key="frame" x="100" y="29" width="260" height="42.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="blossom, bloom, flower" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrX-U4-VXM">
+                                                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e13-ff-sL3">
+                                                            <rect key="frame" x="0.0" y="24.5" width="40" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="lUK-j3-pui" secondAttribute="bottom" constant="15" id="2rN-DC-MOr"/>
+                                                <constraint firstItem="OWh-Op-zIX" firstAttribute="centerY" secondItem="C9O-Bi-W7l" secondAttribute="centerY" id="FCs-I8-vvQ"/>
+                                                <constraint firstItem="lUK-j3-pui" firstAttribute="leading" secondItem="C9O-Bi-W7l" secondAttribute="leading" constant="15" id="J7a-rv-k65"/>
+                                                <constraint firstItem="OWh-Op-zIX" firstAttribute="leading" secondItem="lUK-j3-pui" secondAttribute="trailing" constant="15" id="JRo-pN-kDX"/>
+                                                <constraint firstItem="lUK-j3-pui" firstAttribute="top" secondItem="C9O-Bi-W7l" secondAttribute="top" constant="15" id="c4D-iI-AYe"/>
+                                                <constraint firstAttribute="trailing" secondItem="OWh-Op-zIX" secondAttribute="trailing" constant="15" id="mZg-p3-3sM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pixaImageView" destination="lUK-j3-pui" id="x7d-F5-eWt"/>
+                                            <outlet property="tagsLabel" destination="rrX-U4-VXM" id="Wd4-Me-bmd"/>
+                                            <outlet property="typeLabel" destination="e13-ff-sL3" id="ROB-Aq-K5M"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="priceButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gwc-f3-INt"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="y06-uO-uIX"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="S9x-ay-xJQ"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ixy-Xf-NIL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DLH-wy-aP9"/>
+                            <constraint firstItem="Ixy-Xf-NIL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bQb-Tv-KGj"/>
+                            <constraint firstItem="Ixy-Xf-NIL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hUa-9w-dam"/>
+                            <constraint firstItem="Ixy-Xf-NIL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kAB-EN-P1J"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="6Ik-UG-GAD"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ixy-Xf-NIL" id="TUo-wX-g3a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1159" y="-672"/>
+            <point key="canvasLocation" x="1157.5999999999999" y="-672.41379310344837"/>
         </scene>
-        <!--Bitcoin View Controller-->
+        <!--View Controller-->
         <scene sceneID="g9B-8q-7Q8">
             <objects>
-                <viewController storyboardIdentifier="BitcoinViewController" id="CH0-So-Dgm" customClass="BitcoinViewController" customModule="TheNewBase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CH0-So-Dgm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kiL-Ld-7LN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1A-9c-SL0">
-                                <rect key="frame" x="145" y="290" width="85" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aPG-fY-EHG"/>
                     </view>
-                    <connections>
-                        <outlet property="infoLabel" destination="r1A-9c-SL0" id="PGD-WN-ZUR"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8I-Sc-AkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

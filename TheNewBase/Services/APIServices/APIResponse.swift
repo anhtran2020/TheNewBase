@@ -17,7 +17,7 @@ struct APIError: Error {
 
 struct APIResponse {
     
-    var result = Result<Any?>.success([:])
+    var result = Swift.Result<Any?, Error>.success(nil)
     
     init<T: Decodable>(type: T.Type, response: DataResponse<Any>) {
         print("RESPONSE: \(response)")

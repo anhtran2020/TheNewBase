@@ -1,14 +1,14 @@
 //
-//  BitcoinRouter.swift
+//  SearchImageRouter.swift
 //  TheNewBase
 //
-//  Created by Anh Tran on 9/19/19.
+//  Created by Anh Tran on 10/4/19.
 //  Copyright © 2019 Anh Tran. All rights reserved.
 //
 
 import Alamofire
 
-struct BitcoinRouter: Requestable {
+struct ImageRouter: Requestable {
     
     var parameters: [String : Any]
     
@@ -17,10 +17,11 @@ struct BitcoinRouter: Requestable {
     }
     
     var path: String {
-        return Address.Bitcoin.price
+        return ""
     }
     
     init(params: [String: Any]) {
         self.parameters = params
     }
 }
+
