@@ -13,9 +13,9 @@ enum StoryboardName: String {
 }
 
 extension UIViewController {
-    class var identifier: String {
-        return String(describing: self)
-    }
+//    class var identifier: String {
+//        return String(describing: self)
+//    }
 }
 
 extension UIViewController {
@@ -40,5 +40,11 @@ extension UIViewController {
     
     func instantiateViewController<T>(fromStoryboard name: StoryboardName, ofType type: T.Type) -> T {
         return UIStoryboard(name: name.rawValue, bundle: nil).instantiateViewController(ofType: type)
+    }
+}
+
+extension NSObject {
+    class var identifier: String {
+        return String(describing: self)
     }
 }

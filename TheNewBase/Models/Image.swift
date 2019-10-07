@@ -15,7 +15,8 @@ struct ImagesResponse: Codable {
 }
 
 struct PixaImage: Codable {
-    var id: String
+//    var id: String
     var previewURL: String
     var tags: String
+    var type: String
 }

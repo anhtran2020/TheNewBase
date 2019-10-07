@@ -11,9 +11,9 @@ import Swinject
 struct ViewModelAssembly: Assembly {
     
     func assemble(container: Container) {
-        container.register(BitcoinViewModeling.self) { resolver in
+        container.register(PixaImagesViewModeling.self) { resolver in
             let networking = resolver.resolve(Networking.self)
-            let viewModel = BitcoinViewModel(networking: networking)
+            let viewModel = PixaImagesViewModel(networking: networking)
             return viewModel
         }
     }

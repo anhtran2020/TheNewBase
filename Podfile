@@ -17,5 +17,6 @@ target 'TheNewBase' do
   pod 'Crashlytics'
   pod 'Swinject'
   pod 'SwinjectStoryboard'
+  pod 'SDWebImage'
 
 end

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PixaImagaCell: UITableViewCell {
     
@@ -16,13 +17,16 @@ class PixaImagaCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func configCell(with model: PixaImage) {
+        pixaImageView.sd_setImage(with: URL(string: model.previewURL), completed: nil)
+        tagsLabel.text = model.tags
+        typeLabel.text = model.type
     }
 
 }

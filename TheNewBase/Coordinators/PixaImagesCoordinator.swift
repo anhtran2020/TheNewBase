@@ -10,7 +10,7 @@ import UIKit
 import Swinject
 import RxSwift
 
-struct FirstCoordinator: Coordinator {
+struct PixaImagesCoordinator: Coordinator {
     
     let window: UIWindow
     let disposeBag: DisposeBag
@@ -23,25 +23,25 @@ struct FirstCoordinator: Coordinator {
     }
 
     mutating func start() {
-        guard let firstVC = Assembler.resolve(FirstViewController.self) else {
+        guard let pixaImagesVC = Assembler.resolve(PixaImagesVC.self) else {
             return
         }
         
-        navigationController = BaseNavigationController(rootViewController: firstVC)
+        navigationController = BaseNavigationController(rootViewController: pixaImagesVC)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
-        addObservers(of: firstVC)
+        addObservers(of: pixaImagesVC)
     }
     
-    func addObservers(of object: FirstViewController) {
-        object.showBitcoinController.asObserver().subscribe(onNext: { value in
-            self.showBitcoinViewController()
+    func addObservers(of object: PixaImagesVC) {
+        object.showImageDetailVC.asObserver().subscribe(onNext: { image in
+            self.showDetail(of: image)
         }).disposed(by: disposeBag)
     }
     
-    func showBitcoinViewController() {
-        let coordinator = BitcoinCoordinator(presenter: self.navigationController)
+    private func showDetail(of image: PixaImage) {
+        let coordinator = PixaImageDetailCoordinator(navigationController: navigationController)
         coordinator.start()
     }
 }
