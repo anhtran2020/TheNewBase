@@ -10,7 +10,7 @@ import UIKit
 import Swinject
 import RxSwift
 
-struct PixaImagesCoordinator: Coordinator {
+struct ImagesCoordinator: Coordinator {
     
     let window: UIWindow
     let disposeBag: DisposeBag
@@ -23,7 +23,7 @@ struct PixaImagesCoordinator: Coordinator {
     }
 
     mutating func start() {
-        guard let pixaImagesVC = Assembler.resolve(PixaImagesVC.self) else {
+        guard let pixaImagesVC = Assembler.resolve(ImagesViewController.self) else {
             return
         }
         
@@ -34,14 +34,14 @@ struct PixaImagesCoordinator: Coordinator {
         addObservers(of: pixaImagesVC)
     }
     
-    func addObservers(of object: PixaImagesVC) {
+    func addObservers(of object: ImagesViewController) {
         object.showImageDetailVC.asObserver().subscribe(onNext: { image in
             self.showDetail(of: image)
         }).disposed(by: disposeBag)
     }
     
-    private func showDetail(of image: PixaImage) {
-        let coordinator = PixaImageDetailCoordinator(navigationController: navigationController)
+    private func showDetail(of image: Imaging) {
+        let coordinator = ImageDetailCoordinator(navigationController: navigationController, image: image)
         coordinator.start()
     }
 }

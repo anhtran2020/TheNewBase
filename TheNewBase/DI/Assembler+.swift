@@ -13,7 +13,7 @@ extension Assembler {
         let container = Container()
         let assembler = Assembler([NetworkAssembly(),
                                    ViewModelAssembly(),
-                                   PixaImagesAssembly(),
+                                   ImagesAssembly(),
                                    RouterAssembly()],
                                   container: container)
         return assembler

@@ -10,18 +10,18 @@ import UIKit
 import Swinject
 import RxSwift
 
-class PixaImageDetailCoordinator: Coordinator {
+class ImageDetailCoordinator: Coordinator {
     
     var navigationController: UINavigationController?
-    var pixaImage: PixaImage?
+    var image: Imaging
     
-    init(navigationController: UINavigationController?, image: PixaImage) {
+    init(navigationController: UINavigationController?, image: Imaging) {
         self.navigationController = navigationController
-        self.pixaImage = image
+        self.image = image
     }
 
     func start() {
-        guard let detailVC = Assembler.resolve(PixaImagesDetailVC.self) else {
+        guard let detailVC = Assembler.resolve(ImagesDetailViewController.self, argument: image) else {
             return
         }
         

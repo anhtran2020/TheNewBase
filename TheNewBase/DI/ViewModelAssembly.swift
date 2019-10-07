@@ -11,10 +11,14 @@ import Swinject
 struct ViewModelAssembly: Assembly {
     
     func assemble(container: Container) {
-        container.register(PixaImagesViewModeling.self) { resolver in
+        container.register(ImagesViewModeling.self) { resolver in
             let networking = resolver.resolve(Networking.self)
-            let viewModel = PixaImagesViewModel(networking: networking)
+            let viewModel = ImagesViewModel(networking: networking)
             return viewModel
+        }
+        
+        container.register(ImageDetailViewModeling.self) { (resolver: Resolver, image: Imaging) in
+            return ImageDetailViewModel(image: image)
         }
     }
 }

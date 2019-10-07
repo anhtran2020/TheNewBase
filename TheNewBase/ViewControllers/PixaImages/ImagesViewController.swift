@@ -10,12 +10,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class PixaImagesVC: BaseViewController {
+class ImagesViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: PixaImagesViewModeling?
-    var showImageDetailVC = PublishSubject<PixaImage>()
+    var viewModel: ImagesViewModeling?
+    var showImageDetailVC = PublishSubject<Imaging>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class PixaImagesVC: BaseViewController {
     }
     
     private func setupTableViewCell() {
-        viewModel?.pixaImages.bind(to: tableView.rx.items(cellIdentifier: PixaImagaCell.identifier,
+        viewModel?.images.bind(to: tableView.rx.items(cellIdentifier: PixaImagaCell.identifier,
                                                           cellType: PixaImagaCell.self)) { row, model, cell in
             cell.configCell(with: model)
         }.disposed(by: disposeBag)
@@ -41,7 +41,7 @@ class PixaImagesVC: BaseViewController {
     }
     
     private func showDetailImage(at index: Int) {
-        guard let images = try? viewModel?.pixaImages.value() else { return }
+        guard let images = try? viewModel?.images.value() else { return }
         showImageDetailVC.onNext(images[index])
     }
 }

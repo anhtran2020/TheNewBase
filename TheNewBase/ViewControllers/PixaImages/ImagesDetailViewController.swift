@@ -8,7 +8,9 @@
 
 import UIKit
 
-class PixaImagesDetailVC: UIViewController {
+class ImagesDetailViewController: UIViewController {
+    
+    var viewModel: ImageDetailViewModeling?
 
     override func viewDidLoad() {
         super.viewDidLoad()

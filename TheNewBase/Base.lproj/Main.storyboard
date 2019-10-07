@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pixa ImagesVC-->
+        <!--Images View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="PixaImagesVC" id="BYZ-38-t0r" customClass="PixaImagesVC" customModule="TheNewBase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImagesViewController" id="BYZ-38-t0r" customClass="ImagesViewController" customModule="TheNewBase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="1157.5999999999999" y="-672.41379310344837"/>
         </scene>
-        <!--Pixa Images DetailVC-->
+        <!--Images Detail View Controller-->
         <scene sceneID="g9B-8q-7Q8">
             <objects>
-                <viewController storyboardIdentifier="PixaImagesDetailVC" id="CH0-So-Dgm" customClass="PixaImagesDetailVC" customModule="TheNewBase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImagesDetailViewController" id="CH0-So-Dgm" customClass="ImagesDetailViewController" customModule="TheNewBase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kiL-Ld-7LN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

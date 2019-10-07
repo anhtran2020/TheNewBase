@@ -18,7 +18,7 @@ struct AppCoordinator: Coordinator {
     }
     
     func start() {
-        var firstCoordinator = PixaImagesCoordinator(window: window)
+        var firstCoordinator = ImagesCoordinator(window: window)
         firstCoordinator.start()
     }
 }

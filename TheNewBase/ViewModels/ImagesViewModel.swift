@@ -9,17 +9,17 @@
 import RxSwift
 import Swinject
 
-protocol PixaImagesViewModeling: NetworkViewModeling {
+protocol ImagesViewModeling: NetworkViewModeling {
     
-    var pixaImages: BehaviorSubject<[PixaImage]> { get set }
+    var images: BehaviorSubject<[Imaging]> { get set }
     var errorMessage: PublishSubject<String> { get set }
     mutating func fetchPixaImages()
 }
 
-class PixaImagesViewModel: ViewModeling, PixaImagesViewModeling {
+class ImagesViewModel: ViewModeling, ImagesViewModeling {
 
     var networking: Networking?
-    var pixaImages = BehaviorSubject<[PixaImage]>(value: [])
+    var images = BehaviorSubject<[Imaging]>(value: [])
     var errorMessage = PublishSubject<String>()
     var disposeBag = DisposeBag()
     
@@ -51,7 +51,7 @@ class PixaImagesViewModel: ViewModeling, PixaImagesViewModeling {
     
     private func parseSuccessResponse(with result: Any?) {
         if let response = result as? ImagesResponse {
-            pixaImages.onNext(response.hits)
+            images.onNext(response.hits)
         }
     }
     

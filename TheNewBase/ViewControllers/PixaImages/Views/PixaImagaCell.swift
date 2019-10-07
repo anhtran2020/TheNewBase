@@ -23,7 +23,7 @@ class PixaImagaCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configCell(with model: PixaImage) {
+    func configCell(with model: Imaging) {
         pixaImageView.sd_setImage(with: URL(string: model.previewURL), completed: nil)
         tagsLabel.text = model.tags
         typeLabel.text = model.type
