@@ -28,11 +28,7 @@ class ImagesViewModel: ViewModeling, ImagesViewModeling {
     }
     
     func fetchPixaImages() {
-        let paramters = [ "key": Constants.Pixabay.apiKey,
-            "image_type": "photo",
-            "safesearch": true,
-            "per_page": 50] as [String : Any]
-        guard let router = Assembler.resolve(ImageRouter.self, argument: paramters) else { return }
+        let router = ImageRouter(paging: 2)
         networking?.request(type: ImagesResponse.self, urlRequest: router).subscribe(onNext: { [weak self] response in
             self?.handleResponse(with: response.result)
         }, onError: { [weak self] error in

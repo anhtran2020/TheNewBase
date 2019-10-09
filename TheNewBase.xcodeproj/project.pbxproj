@@ -15,6 +15,8 @@
 		661F0BFD233DC53500B411C7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661F0BFC233DC53500B411C7 /* Coordinator.swift */; };
 		661F0BFF233DC85300B411C7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661F0BFE233DC85300B411C7 /* AppCoordinator.swift */; };
 		663A66FD2333926300C97EB1 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663A66FC2333926300C97EB1 /* UIViewController+.swift */; };
+		665F4D1D234DD8C2000966C4 /* Pixabay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665F4D1C234DD8C2000966C4 /* Pixabay.swift */; };
+		665F4D1F234DEAD6000966C4 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665F4D1E234DEAD6000966C4 /* UIView+.swift */; };
 		666AF07C2334BD41004E8F99 /* ViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF07B2334BD41004E8F99 /* ViewModeling.swift */; };
 		666AF07E2334C123004E8F99 /* ViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF07D2334C123004E8F99 /* ViewControlling.swift */; };
 		666AF0832334E599004E8F99 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF0822334E599004E8F99 /* NetworkAssembly.swift */; };
@@ -24,7 +26,6 @@
 		666AF08B2334E7C9004E8F99 /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF08A2334E7C9004E8F99 /* UIStoryboard+.swift */; };
 		666AF08D2334E80C004E8F99 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF08C2334E80C004E8F99 /* UIDevice+.swift */; };
 		666AF08F2334E82B004E8F99 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF08E2334E82B004E8F99 /* UITableView+.swift */; };
-		667E76AF2347648800BBF0EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667E76AE2347648800BBF0EB /* Constants.swift */; };
 		667E76B12347665600BBF0EB /* ImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667E76B02347665600BBF0EB /* ImageRouter.swift */; };
 		667E76B3234766CA00BBF0EB /* RouterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667E76B2234766CA00BBF0EB /* RouterAssembly.swift */; };
 		667E76B52347676F00BBF0EB /* ImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667E76B42347676F00BBF0EB /* ImagesViewModel.swift */; };
@@ -73,6 +74,8 @@
 		661F0BFC233DC53500B411C7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		661F0BFE233DC85300B411C7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		663A66FC2333926300C97EB1 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		665F4D1C234DD8C2000966C4 /* Pixabay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixabay.swift; sourceTree = "<group>"; };
+		665F4D1E234DEAD6000966C4 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		666AF07B2334BD41004E8F99 /* ViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModeling.swift; sourceTree = "<group>"; };
 		666AF07D2334C123004E8F99 /* ViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlling.swift; sourceTree = "<group>"; };
 		666AF0822334E599004E8F99 /* NetworkAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
@@ -82,7 +85,6 @@
 		666AF08A2334E7C9004E8F99 /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
 		666AF08C2334E80C004E8F99 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
 		666AF08E2334E82B004E8F99 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
-		667E76AE2347648800BBF0EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		667E76B02347665600BBF0EB /* ImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouter.swift; sourceTree = "<group>"; };
 		667E76B2234766CA00BBF0EB /* RouterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterAssembly.swift; sourceTree = "<group>"; };
 		667E76B42347676F00BBF0EB /* ImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewModel.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				666AF08A2334E7C9004E8F99 /* UIStoryboard+.swift */,
 				666AF08C2334E80C004E8F99 /* UIDevice+.swift */,
 				666AF08E2334E82B004E8F99 /* UITableView+.swift */,
+				665F4D1E234DEAD6000966C4 /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,7 +223,7 @@
 		667E76AD2347647200BBF0EB /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				667E76AE2347648800BBF0EB /* Constants.swift */,
+				665F4D1C234DD8C2000966C4 /* Pixabay.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -531,9 +534,9 @@
 				66D1AF892344A1D2009C8A61 /* NetworkError.swift in Sources */,
 				666AF07C2334BD41004E8F99 /* ViewModeling.swift in Sources */,
 				666AF08F2334E82B004E8F99 /* UITableView+.swift in Sources */,
+				665F4D1D234DD8C2000966C4 /* Pixabay.swift in Sources */,
 				66E7A6AA232F9E4300F4E22C /* Network.swift in Sources */,
 				667E76B52347676F00BBF0EB /* ImagesViewModel.swift in Sources */,
-				667E76AF2347648800BBF0EB /* Constants.swift in Sources */,
 				666AF0852334E5A9004E8F99 /* ViewModelAssembly.swift in Sources */,
 				667E76B7234767BF00BBF0EB /* Image.swift in Sources */,
 				661F0BFF233DC85300B411C7 /* AppCoordinator.swift in Sources */,
@@ -556,6 +559,7 @@
 				0CAA5C542340765A004F516B /* BaseNavigationController.swift in Sources */,
 				66E7A6A8232F9B0B00F4E22C /* Networking.swift in Sources */,
 				666AF0872334E607004E8F99 /* ImagesAssembly.swift in Sources */,
+				665F4D1F234DEAD6000966C4 /* UIView+.swift in Sources */,
 				667E76B3234766CA00BBF0EB /* RouterAssembly.swift in Sources */,
 				667E76BB2347714200BBF0EB /* ImagesViewController.swift in Sources */,
 			);

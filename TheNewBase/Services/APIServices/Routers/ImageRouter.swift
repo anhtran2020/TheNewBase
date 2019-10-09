@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct ImageRouter: Requestable {
+struct ImageRouter: Requestable {    
     
     var parameters: [String : Any]
     
@@ -18,6 +18,14 @@ struct ImageRouter: Requestable {
     
     var path: String {
         return ""
+    }
+    
+    init(paging: Int) {
+        parameters = ["key": Pixabay.apiKey,
+                      "image_type": "photo",
+                      "safesearch": true,
+                      "per_page": Pixabay.maxImagesPerPage,
+                      "page": paging]
     }
     
     init(params: [String: Any]) {
