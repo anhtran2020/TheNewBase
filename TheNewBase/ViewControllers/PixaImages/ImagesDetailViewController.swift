@@ -7,26 +7,31 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ImagesDetailViewController: UIViewController {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var sizeLabel: UILabel!
     
     var viewModel: ImageDetailViewModeling?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configViews() {
+        guard let image = viewModel?.image else { return }
+        self.title = image.tags
+        imageView.sd_setImage(with: URL(string: image.largeImageURL),
+                              placeholderImage: UIImage(named: "ic_default"))
+        usernameLabel.text = image.user
+        typeLabel.text = image.type
+        sizeLabel.text = "\(image.imageWidth) x \(image.imageHeight)"
     }
-    */
 
 }

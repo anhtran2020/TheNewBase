@@ -23,10 +23,11 @@ class PixaImagaCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configCell(with model: Imaging) {
-        pixaImageView.sd_setImage(with: URL(string: model.previewURL), completed: nil)
-        tagsLabel.text = model.tags
-        typeLabel.text = model.type
+    func configCell(with image: Imaging) {
+        pixaImageView.sd_setImage(with: URL(string: image.previewURL),
+                                  placeholderImage: UIImage(named: "ic_default"))
+        tagsLabel.text = image.tags
+        typeLabel.text = "\(image.imageWidth) x \(image.imageHeight)"
     }
 
 }

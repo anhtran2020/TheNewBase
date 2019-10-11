@@ -19,9 +19,25 @@ class ImagesViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Pixa Images"
+        addObservers()
         setupTableViewCell()
         setupTableViewCellTapped()
-        viewModel?.fetchPixaImages()
+        setupTableViewPullToRefresh()
+        tableView.triggerPullToRefresh()
+    }
+    
+    private func addObservers() {
+        viewModel?.images.subscribe(onNext: { [weak self] _ in
+            self?.tableView.stopPullToRefreshAnimating()
+        }).disposed(by: disposeBag)
+    }
+    
+    private func setupTableViewPullToRefresh() {
+        tableView.addPullToRefresh { [weak self] in
+            self?.viewModel?.images.onNext([])
+            self?.viewModel?.fetchPixaImages()
+        }
     }
     
     private func setupTableViewCell() {

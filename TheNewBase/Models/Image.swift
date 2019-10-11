@@ -9,9 +9,14 @@
 import Foundation
 
 protocol Imaging {
+    var id: Int { get set }
     var previewURL: String { get set }
     var tags: String { get set }
     var type: String { get set }
+    var user: String { get set }
+    var largeImageURL: String { get set }
+    var imageWidth: Int { get set }
+    var imageHeight: Int { get set }
 }
 
 struct ImagesResponse: Codable {
@@ -21,8 +26,12 @@ struct ImagesResponse: Codable {
 }
 
 struct PixaImage: Codable, Imaging {
-//    var id: String
+    var id: Int
     var previewURL: String
     var tags: String
     var type: String
+    var user: String
+    var largeImageURL: String
+    var imageWidth: Int
+    var imageHeight: Int
 }
