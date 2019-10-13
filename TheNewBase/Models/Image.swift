@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Imaging {
+protocol Imaging: Codable {
     var id: Int { get set }
     var previewURL: String { get set }
     var tags: String { get set }
@@ -25,7 +25,7 @@ struct ImagesResponse: Codable {
     var hits: [PixaImage]
 }
 
-struct PixaImage: Codable, Imaging {
+struct PixaImage: Imaging {
     var id: Int
     var previewURL: String
     var tags: String

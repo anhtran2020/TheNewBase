@@ -39,7 +39,7 @@ DEPENDENCIES:
   - SwinjectStoryboard
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Crashlytics
     - Fabric
@@ -71,4 +71,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d5c85399d3311d24411dada44871d1e402c8b58e
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.3

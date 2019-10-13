@@ -25,7 +25,7 @@ extension UIScrollView {
     @objc func addPullToRefresh(with actionHandle: @escaping () -> Void) {
         let refreshControl = RefreshControl()
         refreshControl.valueChangeActionHandle = actionHandle
-        self.addSubview(refreshControl)
+        self.refreshControl = refreshControl
         self.pullToRefreshControl = refreshControl
     }
     

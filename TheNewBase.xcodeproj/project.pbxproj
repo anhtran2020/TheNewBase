@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0C2DC9AB234B7E2400B1AA8E /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2DC9AA234B7E2400B1AA8E /* ImageDetailViewModel.swift */; };
+		0C3121392350B7E8001EF36C /* UIScrollView+InfiniteScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3121382350B7E8001EF36C /* UIScrollView+InfiniteScrolling.swift */; };
 		0CAA5C4E234073FE004F516B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA5C4D234073FE004F516B /* BaseViewController.swift */; };
 		0CAA5C5223407584004F516B /* ImagesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA5C5123407584004F516B /* ImagesCoordinator.swift */; };
 		0CAA5C542340765A004F516B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA5C532340765A004F516B /* BaseNavigationController.swift */; };
+		0CB7EF3923523F8A00D358CE /* RxSwift+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB7EF3823523F8A00D358CE /* RxSwift+.swift */; };
 		0CC60AC28861D2EE0D5B916E /* Pods_TheNewBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E6CA08E09807E68734B87C /* Pods_TheNewBase.framework */; };
 		661F0BFD233DC53500B411C7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661F0BFC233DC53500B411C7 /* Coordinator.swift */; };
 		661F0BFF233DC85300B411C7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661F0BFE233DC85300B411C7 /* AppCoordinator.swift */; };
@@ -68,9 +70,11 @@
 
 /* Begin PBXFileReference section */
 		0C2DC9AA234B7E2400B1AA8E /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
+		0C3121382350B7E8001EF36C /* UIScrollView+InfiniteScrolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+InfiniteScrolling.swift"; sourceTree = "<group>"; };
 		0CAA5C4D234073FE004F516B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0CAA5C5123407584004F516B /* ImagesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCoordinator.swift; sourceTree = "<group>"; };
 		0CAA5C532340765A004F516B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		0CB7EF3823523F8A00D358CE /* RxSwift+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+.swift"; sourceTree = "<group>"; };
 		44E6CA08E09807E68734B87C /* Pods_TheNewBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheNewBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		661F0BFC233DC53500B411C7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		661F0BFE233DC85300B411C7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				666AF08E2334E82B004E8F99 /* UITableView+.swift */,
 				665F4D1E234DEAD6000966C4 /* UIView+.swift */,
 				6675C57423508EDB006E6F92 /* UIScrollView+.swift */,
+				0C3121382350B7E8001EF36C /* UIScrollView+InfiniteScrolling.swift */,
+				0CB7EF3823523F8A00D358CE /* RxSwift+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 				666AF08F2334E82B004E8F99 /* UITableView+.swift in Sources */,
 				665F4D1D234DD8C2000966C4 /* Pixabay.swift in Sources */,
 				66E7A6AA232F9E4300F4E22C /* Network.swift in Sources */,
+				0CB7EF3923523F8A00D358CE /* RxSwift+.swift in Sources */,
 				667E76B52347676F00BBF0EB /* ImagesViewModel.swift in Sources */,
 				666AF0852334E5A9004E8F99 /* ViewModelAssembly.swift in Sources */,
 				667E76B7234767BF00BBF0EB /* Image.swift in Sources */,
@@ -548,6 +555,7 @@
 				0C2DC9AB234B7E2400B1AA8E /* ImageDetailViewModel.swift in Sources */,
 				66A8F7C7234B4AA300845F8B /* ImagesDetailViewController.swift in Sources */,
 				66E7A69F232F3DE400F4E22C /* APIConfigs.swift in Sources */,
+				0C3121392350B7E8001EF36C /* UIScrollView+InfiniteScrolling.swift in Sources */,
 				0CAA5C5223407584004F516B /* ImagesCoordinator.swift in Sources */,
 				66A8F7C9234B4AFD00845F8B /* ImageDetailCoordinator.swift in Sources */,
 				667E76B12347665600BBF0EB /* ImageRouter.swift in Sources */,

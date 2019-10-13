@@ -38,6 +38,10 @@ class ImagesViewController: BaseViewController {
             self?.viewModel?.images.onNext([])
             self?.viewModel?.fetchPixaImages()
         }
+        
+        tableView.addInfiniteScrollingView { [weak self] in
+            self?.viewModel?.fetchPixaImages()
+        }
     }
     
     private func setupTableViewCell() {

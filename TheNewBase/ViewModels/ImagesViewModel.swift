@@ -47,7 +47,11 @@ class ImagesViewModel: ViewModeling, ImagesViewModeling {
     
     private func parseSuccessResponse(with result: Any?) {
         if let response = result as? ImagesResponse {
-            images.onNext(response.hits)
+            guard let values = images.value else {
+                images.onNext(response.hits)
+                return
+            }
+            images.onNext(values + response.hits)
         }
     }
     
