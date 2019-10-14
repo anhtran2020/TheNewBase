@@ -28,7 +28,7 @@
 		666AF08B2334E7C9004E8F99 /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF08A2334E7C9004E8F99 /* UIStoryboard+.swift */; };
 		666AF08D2334E80C004E8F99 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF08C2334E80C004E8F99 /* UIDevice+.swift */; };
 		666AF08F2334E82B004E8F99 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AF08E2334E82B004E8F99 /* UITableView+.swift */; };
-		6675C57523508EDB006E6F92 /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675C57423508EDB006E6F92 /* UIScrollView+.swift */; };
+		6675C57523508EDB006E6F92 /* UIScrollView+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675C57423508EDB006E6F92 /* UIScrollView+PullToRefresh.swift */; };
 		667E76B12347665600BBF0EB /* ImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667E76B02347665600BBF0EB /* ImageRouter.swift */; };
 		667E76B3234766CA00BBF0EB /* RouterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667E76B2234766CA00BBF0EB /* RouterAssembly.swift */; };
 		667E76B52347676F00BBF0EB /* ImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667E76B42347676F00BBF0EB /* ImagesViewModel.swift */; };
@@ -90,7 +90,7 @@
 		666AF08A2334E7C9004E8F99 /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
 		666AF08C2334E80C004E8F99 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
 		666AF08E2334E82B004E8F99 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
-		6675C57423508EDB006E6F92 /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
+		6675C57423508EDB006E6F92 /* UIScrollView+PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+PullToRefresh.swift"; sourceTree = "<group>"; };
 		667E76B02347665600BBF0EB /* ImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouter.swift; sourceTree = "<group>"; };
 		667E76B2234766CA00BBF0EB /* RouterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterAssembly.swift; sourceTree = "<group>"; };
 		667E76B42347676F00BBF0EB /* ImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewModel.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 				666AF08C2334E80C004E8F99 /* UIDevice+.swift */,
 				666AF08E2334E82B004E8F99 /* UITableView+.swift */,
 				665F4D1E234DEAD6000966C4 /* UIView+.swift */,
-				6675C57423508EDB006E6F92 /* UIScrollView+.swift */,
+				6675C57423508EDB006E6F92 /* UIScrollView+PullToRefresh.swift */,
 				0C3121382350B7E8001EF36C /* UIScrollView+InfiniteScrolling.swift */,
 				0CB7EF3823523F8A00D358CE /* RxSwift+.swift */,
 			);
@@ -567,7 +567,7 @@
 				666AF07E2334C123004E8F99 /* ViewControlling.swift in Sources */,
 				0CAA5C4E234073FE004F516B /* BaseViewController.swift in Sources */,
 				663A66FD2333926300C97EB1 /* UIViewController+.swift in Sources */,
-				6675C57523508EDB006E6F92 /* UIScrollView+.swift in Sources */,
+				6675C57523508EDB006E6F92 /* UIScrollView+PullToRefresh.swift in Sources */,
 				0CAA5C542340765A004F516B /* BaseNavigationController.swift in Sources */,
 				66E7A6A8232F9B0B00F4E22C /* Networking.swift in Sources */,
 				666AF0872334E607004E8F99 /* ImagesAssembly.swift in Sources */,

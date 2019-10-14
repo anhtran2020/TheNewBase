@@ -23,24 +23,24 @@ class ImagesViewController: BaseViewController {
         addObservers()
         setupTableViewCell()
         setupTableViewCellTapped()
-        setupTableViewPullToRefresh()
+        setupTableViewLoadData()
         tableView.triggerPullToRefresh()
     }
     
     private func addObservers() {
         viewModel?.images.subscribe(onNext: { [weak self] _ in
             self?.tableView.stopPullToRefreshAnimating()
+            self?.tableView.infiniteScrollingView?.stopAnimating()
         }).disposed(by: disposeBag)
     }
     
-    private func setupTableViewPullToRefresh() {
+    private func setupTableViewLoadData() {
         tableView.addPullToRefresh { [weak self] in
-            self?.viewModel?.images.onNext([])
-            self?.viewModel?.fetchPixaImages()
+            self?.viewModel?.refesh()
         }
         
         tableView.addInfiniteScrollingView { [weak self] in
-            self?.viewModel?.fetchPixaImages()
+            self?.viewModel?.loadMore()
         }
     }
     
@@ -52,7 +52,7 @@ class ImagesViewController: BaseViewController {
     }
     
     private func setupTableViewCellTapped() {
-        tableView.rx.modelSelected(PixaImage.self).subscribe(onNext: { [weak self] image in
+        tableView.rx.modelSelected(Imaging.self).subscribe(onNext: { [weak self] image in
             guard let self = self else { return }
             guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
             self.tableView.deselectRow(at: indexPath, animated: true)
@@ -61,7 +61,7 @@ class ImagesViewController: BaseViewController {
     }
     
     private func showDetailImage(at index: Int) {
-        guard let images = try? viewModel?.images.value() else { return }
+        guard let images = viewModel?.images.value else { return }
         showImageDetailVC.onNext(images[index])
     }
 }

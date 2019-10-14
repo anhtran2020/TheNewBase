@@ -13,7 +13,9 @@ protocol ImagesViewModeling: NetworkViewModeling {
     
     var images: BehaviorSubject<[Imaging]> { get set }
     var errorMessage: PublishSubject<String> { get set }
-    mutating func fetchPixaImages()
+    
+    func refesh()
+    func loadMore()
 }
 
 class ImagesViewModel: ViewModeling, ImagesViewModeling {
@@ -22,13 +24,26 @@ class ImagesViewModel: ViewModeling, ImagesViewModeling {
     var images = BehaviorSubject<[Imaging]>(value: [])
     var errorMessage = PublishSubject<String>()
     var disposeBag = DisposeBag()
+    var pageNumber = 1
     
     init(networking: Networking?) {
         self.networking = networking
     }
     
-    func fetchPixaImages() {
-        let router = ImageRouter(paging: 2)
+    func refesh() {
+        pageNumber = 1
+        images.onNext([])
+        fetchPixaImages()
+    }
+    
+    func loadMore() {
+        pageNumber += 1
+        fetchPixaImages()
+        print("Page number: \(pageNumber)")
+    }
+    
+    private func fetchPixaImages() {
+        let router = ImageRouter(paging: pageNumber)
         networking?.request(type: ImagesResponse.self, urlRequest: router).subscribe(onNext: { [weak self] response in
             self?.handleResponse(with: response.result)
         }, onError: { [weak self] error in

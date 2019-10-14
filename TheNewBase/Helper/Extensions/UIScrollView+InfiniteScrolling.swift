@@ -55,10 +55,10 @@ class InfiniteScrollingView: UIView {
     
     init(frame: CGRect, scrollView: UIScrollView, originBottomInset: CGFloat, handler: (() -> Void)?) {
         super.init(frame: frame)
-        self.scrollView = scrollView
-        self.originBottomInset = originBottomInset
         self.isHidden = true
+        self.scrollView = scrollView
         self.infiniteScrollingHandler = handler
+        self.originBottomInset = originBottomInset
         self.setupActivityIndicator()
         self.addObservers()
     }
@@ -72,7 +72,9 @@ class InfiniteScrollingView: UIView {
     }
     
     private func addObservers() {
-        scrollView?.delegate = self
+        scrollView?.rx.contentOffset.asObservable().subscribe(onNext: { [weak self] offset in
+            self?.scrollViewDidScroll(contentOffset: offset)
+        }).disposed(by: disposeBag)
         
         scrollView?.rx.contentSize.asObservable().subscribe(onNext: { [weak self] size in
             self?.setupInfiniteViewFrame()
@@ -93,7 +95,6 @@ class InfiniteScrollingView: UIView {
         case .loading, .triggered:
             self.isHidden = false
             activityIndicator.startAnimating()
-            infiniteScrollingHandler?()
         case .stopped:
             self.isHidden = true
             activityIndicator.stopAnimating()
@@ -120,20 +121,24 @@ class InfiniteScrollingView: UIView {
         activityIndicator.hidesWhenStopped = true
         self.addSubview(activityIndicator)
     }
-}
-
-extension InfiniteScrollingView: UIScrollViewDelegate {
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+    private func scrollViewDidScroll(contentOffset: CGPoint) {
+        guard let scrollView = self.scrollView else { return }
         let scrollViewContentHeight = scrollView.contentSize.height
         let scrollViewOffsetThreshold = scrollViewContentHeight - scrollView.bounds.size.height
         
+        let previusState = state.value
+        
         if scrollView.isDragging && state.value == .triggered {
             state.onNext(.loading)
-        } else if scrollView.contentOffset.y > scrollViewOffsetThreshold && scrollView.isDragging {
+        } else if contentOffset.y > scrollViewOffsetThreshold && scrollView.isDragging {
             state.onNext(.triggered)
-        } else if scrollView.contentOffset.y < scrollViewOffsetThreshold && state.value != .stopped {
+        } else if contentOffset.y < scrollViewOffsetThreshold && state.value != .stopped {
             state.onNext(.stopped)
+        }
+        
+        if state.value == .loading && previusState == .triggered {
+            infiniteScrollingHandler?()
         }
     }
 }

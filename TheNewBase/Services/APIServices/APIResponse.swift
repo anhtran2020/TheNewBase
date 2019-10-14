@@ -20,7 +20,7 @@ struct APIResponse {
     var result = Swift.Result<Any?, Error>.success(nil)
     
     init<T: Decodable>(type: T.Type, response: DataResponse<Any>) {
-        print("RESPONSE: \(response)")
+//        print("RESPONSE: \(response)")
         guard let value = response.data else {
             let error = APIError(response: response)
             result = .failure(error)
