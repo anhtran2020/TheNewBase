@@ -131,12 +131,13 @@ class InfiniteScrollingView: UIView {
         
         if scrollView.isDragging && state.value == .triggered {
             state.onNext(.loading)
-        } else if contentOffset.y > scrollViewOffsetThreshold && scrollView.isDragging {
+        } else if contentOffset.y > scrollViewOffsetThreshold && scrollView.isDragging &&
+            state.value == .stopped {
             state.onNext(.triggered)
         } else if contentOffset.y < scrollViewOffsetThreshold && state.value != .stopped {
             state.onNext(.stopped)
         }
-        
+                
         if state.value == .loading && previusState == .triggered {
             infiniteScrollingHandler?()
         }

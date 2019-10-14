@@ -29,10 +29,15 @@ class ImagesViewController: BaseViewController {
     
     private func addObservers() {
         viewModel?.images.subscribe(onNext: { [weak self] _ in
-            self?.tableView.stopPullToRefreshAnimating()
-            self?.tableView.infiniteScrollingView?.stopAnimating()
+            self?.stopLoadDataAnimating()
+        }).disposed(by: disposeBag)
+        
+        viewModel?.errorLoadImagesMessage.subscribe(onNext: { [weak self] message in
+            self?.stopLoadDataAnimating()
         }).disposed(by: disposeBag)
     }
+    
+    //MARK: - Setup tableview
     
     private func setupTableViewLoadData() {
         tableView.addPullToRefresh { [weak self] in
@@ -45,8 +50,8 @@ class ImagesViewController: BaseViewController {
     }
     
     private func setupTableViewCell() {
-        viewModel?.images.bind(to: tableView.rx.items(cellIdentifier: PixaImagaCell.identifier,
-                                                          cellType: PixaImagaCell.self)) { row, model, cell in
+        viewModel?.images.bind(to: tableView.rx.items(cellIdentifier: ImageInfoCell.identifier,
+                                                          cellType: ImageInfoCell.self)) { row, model, cell in
             cell.configCell(with: model)
         }.disposed(by: disposeBag)
     }
@@ -60,8 +65,17 @@ class ImagesViewController: BaseViewController {
         }).disposed(by: disposeBag)
     }
     
+    //MARK: - Navigations
+    
     private func showDetailImage(at index: Int) {
         guard let images = viewModel?.images.value else { return }
         showImageDetailVC.onNext(images[index])
+    }
+    
+    //MARK: - Utils
+    
+    private func stopLoadDataAnimating() {
+        tableView.stopPullToRefreshAnimating()
+        tableView.infiniteScrollingView?.stopAnimating()
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class PixaImagaCell: UITableViewCell {
+class ImageInfoCell: UITableViewCell {
     
     @IBOutlet weak var pixaImageView: UIImageView!
     @IBOutlet weak var tagsLabel: UILabel!

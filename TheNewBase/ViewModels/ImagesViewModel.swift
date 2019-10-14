@@ -12,7 +12,7 @@ import Swinject
 protocol ImagesViewModeling: NetworkViewModeling {
     
     var images: BehaviorSubject<[Imaging]> { get set }
-    var errorMessage: PublishSubject<String> { get set }
+    var errorLoadImagesMessage: PublishSubject<String> { get set }
     
     func refesh()
     func loadMore()
@@ -22,7 +22,7 @@ class ImagesViewModel: ViewModeling, ImagesViewModeling {
 
     var networking: Networking?
     var images = BehaviorSubject<[Imaging]>(value: [])
-    var errorMessage = PublishSubject<String>()
+    var errorLoadImagesMessage = PublishSubject<String>()
     var disposeBag = DisposeBag()
     var pageNumber = 1
     
@@ -71,7 +71,8 @@ class ImagesViewModel: ViewModeling, ImagesViewModeling {
     }
     
     private func handleResponseError(_ error: Error) {
+        pageNumber = pageNumber > 1 ? pageNumber - 1 : pageNumber
         let message = handleNetworkError(error: error)
-        self.errorMessage.onNext(message)
+        self.errorLoadImagesMessage.onNext(message)
     }
 }

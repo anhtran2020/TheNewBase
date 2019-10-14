@@ -24,9 +24,10 @@ class ImagesDetailViewController: UIViewController {
         configViews()
     }
     
-    func configViews() {
+    private func configViews() {
         guard let image = viewModel?.image else { return }
         self.title = image.tags
+        imageView.sd_imageIndicator = SDWebImageActivityIndicator.grayLarge
         imageView.sd_setImage(with: URL(string: image.largeImageURL),
                               placeholderImage: UIImage(named: "ic_default"))
         usernameLabel.text = image.user
