@@ -13,12 +13,6 @@ enum StoryboardName: String {
 }
 
 extension UIViewController {
-//    class var identifier: String {
-//        return String(describing: self)
-//    }
-}
-
-extension UIViewController {
     
     func topController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController {
         if let navigationController = controller as? UINavigationController {
