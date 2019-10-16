@@ -13,11 +13,11 @@ struct ViewModelAssembly: Assembly {
     func assemble(container: Container) {
         container.register(ImagesViewModeling.self) { resolver in
             let networking = resolver.resolve(Networking.self)
-            let viewModel = ImagesViewModel(networking: networking)
+            let viewModel = PixaImagesViewModel(networking: networking)
             return viewModel
         }
         
-        container.register(ImageDetailViewModeling.self) { (resolver: Resolver, image: Imaging) in
+        container.register(ImageDetailViewModeling.self) { (resolver: Resolver, image: Imagination) in
             return ImageDetailViewModel(image: image)
         }
     }

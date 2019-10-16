@@ -40,7 +40,7 @@ struct ImagesCoordinator: Coordinator {
         }).disposed(by: disposeBag)
     }
     
-    private func showDetail(of image: Imaging) {
+    private func showDetail(of image: Imagination) {
         let coordinator = ImageDetailCoordinator(navigationController: navigationController, image: image)
         coordinator.start()
     }

@@ -9,16 +9,16 @@
 import UIKit
 
 protocol ImageDetailViewModeling {
-    var image: Imaging { get set }
+    var image: Imagination { get set }
     
-    init(image: Imaging)
+    init(image: Imagination)
 }
 
 class ImageDetailViewModel: ImageDetailViewModeling {
     
-    var image: Imaging
+    var image: Imagination
         
-    required init(image: Imaging) {
+    required init(image: Imagination) {
         self.image = image
     }
 }

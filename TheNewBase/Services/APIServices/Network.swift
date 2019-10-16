@@ -16,10 +16,10 @@ struct Network: Networking {
         
     }
 
-    func request<T: Decodable>(type: T.Type, urlRequest: Requestable) -> Observable<APIResponse> {
+    func request(urlRequest: Requestable) -> Observable<APIResponse> {
         return Observable.create({ observer in
             _ = self.SessionManager.rx.request(urlRequest: urlRequest).responseJSON().subscribe(onNext: { response in
-                observer.onNext(APIResponse(type: type, response: response))
+                observer.onNext(APIResponse(response: response))
                 observer.onCompleted()
             }, onError: { error in
                 observer.onError(error)

@@ -13,9 +13,9 @@ import RxSwift
 class ImageDetailCoordinator: Coordinator {
     
     var navigationController: UINavigationController?
-    var image: Imaging
+    var image: Imagination
     
-    init(navigationController: UINavigationController?, image: Imaging) {
+    init(navigationController: UINavigationController?, image: Imagination) {
         self.navigationController = navigationController
         self.image = image
     }

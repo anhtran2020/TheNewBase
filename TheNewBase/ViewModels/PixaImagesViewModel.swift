@@ -11,17 +11,17 @@ import Swinject
 
 protocol ImagesViewModeling: NetworkViewModeling {
     
-    var images: BehaviorSubject<[Imaging]> { get set }
+    var images: BehaviorSubject<[Imagination]> { get set }
     var errorLoadImagesMessage: PublishSubject<String> { get set }
     
     func refesh()
     func loadMore()
 }
 
-class ImagesViewModel: ViewModeling, ImagesViewModeling {
+class PixaImagesViewModel: ViewModeling, ImagesViewModeling {
 
     var networking: Networking?
-    var images = BehaviorSubject<[Imaging]>(value: [])
+    var images = BehaviorSubject<[Imagination]>(value: [])
     var errorLoadImagesMessage = PublishSubject<String>()
     var disposeBag = DisposeBag()
     var pageNumber = 1
@@ -44,14 +44,14 @@ class ImagesViewModel: ViewModeling, ImagesViewModeling {
     
     private func fetchPixaImages() {
         let router = ImageRouter(paging: pageNumber)
-        networking?.request(type: ImagesResponse.self, urlRequest: router).subscribe(onNext: { [weak self] response in
+        networking?.request(urlRequest: router).subscribe(onNext: { [weak self] response in
             self?.handleResponse(with: response.result)
         }, onError: { [weak self] error in
             self?.handleResponseError(error)
         }).disposed(by: disposeBag)
     }
     
-    private func handleResponse(with result: Result<Any?, Error>) {
+    private func handleResponse(with result: Result<[String: Any]?, Error>) {
         switch result {
         case .success(let data):
             parseSuccessResponse(with: data)
@@ -60,14 +60,14 @@ class ImagesViewModel: ViewModeling, ImagesViewModeling {
         }
     }
     
-    private func parseSuccessResponse(with result: Any?) {
-        if let response = result as? ImagesResponse {
-            guard let values = images.value else {
-                images.onNext(response.hits)
-                return
-            }
-            images.onNext(values + response.hits)
+    private func parseSuccessResponse(with result: [String: Any]?) {
+        guard let result = result else { return }
+        let imageResponse = PixaImageResponse(fromDict: result)
+        guard let values = images.value else {
+            images.onNext(imageResponse.hits)
+            return
         }
+        images.onNext(values + imageResponse.hits)
     }
     
     private func handleResponseError(_ error: Error) {

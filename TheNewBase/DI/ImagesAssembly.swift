@@ -20,7 +20,7 @@ struct ImagesAssembly: Assembly {
             return pixaImagesVC
         }
         
-        container.register(ImagesDetailViewController.self) { (resolver: Resolver, image: Imaging) in
+        container.register(ImagesDetailViewController.self) { (resolver: Resolver, image: Imagination) in
             let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
             let detailVC = storyboard.instantiateViewController(ofType: ImagesDetailViewController.self)
             detailVC.viewModel = resolver.resolve(ImageDetailViewModeling.self, argument: image)

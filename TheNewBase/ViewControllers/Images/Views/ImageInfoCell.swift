@@ -23,7 +23,7 @@ class ImageInfoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configCell(with image: Imaging) {
+    func configCell(with image: Imagination) {
         pixaImageView.sd_setImage(with: URL(string: image.previewURL),
                                   placeholderImage: UIImage(named: "ic_default"))
         tagsLabel.text = image.tags

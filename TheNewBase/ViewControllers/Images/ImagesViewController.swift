@@ -15,7 +15,7 @@ class ImagesViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel: ImagesViewModeling?
-    var showImageDetailVC = PublishSubject<Imaging>()
+    var showImageDetailVC = PublishSubject<Imagination>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class ImagesViewController: BaseViewController {
     }
     
     private func setupTableViewCellTapped() {
-        tableView.rx.modelSelected(Imaging.self).subscribe(onNext: { [weak self] image in
+        tableView.rx.modelSelected(Imagination.self).subscribe(onNext: { [weak self] image in
             guard let self = self else { return }
             guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
             self.tableView.deselectRow(at: indexPath, animated: true)

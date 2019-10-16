@@ -11,7 +11,7 @@ import Alamofire
 
 protocol Networking {
     
-    func request<T: Decodable>(type: T.Type, urlRequest: Requestable) -> Observable<APIResponse>
+    func request(urlRequest: Requestable) -> Observable<APIResponse>
     
     init()
 }

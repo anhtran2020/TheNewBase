@@ -36,9 +36,3 @@ extension UIViewController {
         return UIStoryboard(name: name.rawValue, bundle: nil).instantiateViewController(ofType: type)
     }
 }
-
-extension NSObject {
-    class var identifier: String {
-        return String(describing: self)
-    }
-}
